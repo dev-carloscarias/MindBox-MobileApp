@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mindbox/screens/intro_screen.dart';
+import 'package:mindbox/screens/login_register_screen.dart';
 
 void main() {
   runApp(const MainApp());
 }
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -12,7 +15,14 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.blueGrey),
-        home: const IntroScreen());
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      home: const IntroScreen(),
+      initialRoute: IntroScreen.id,
+      navigatorKey: navigatorKey,
+      routes: {
+        IntroScreen.id: (context) => const IntroScreen(),
+        LoginRegisterScreen.id: (context) => const LoginRegisterScreen()
+      },
+    );
   }
 }

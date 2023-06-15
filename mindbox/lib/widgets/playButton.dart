@@ -58,8 +58,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
           );
         },
         child: IconButton(
-          icon: Image.asset(
-              'assets/ActionButton.png'), // Reemplaza esto con la ruta a tu imagen
+          icon: Image.asset('assets/CircleButton.png'),
           onPressed: widget.accion,
           iconSize: 100,
         ),
